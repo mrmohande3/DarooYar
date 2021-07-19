@@ -11,8 +11,6 @@ DarooYar is an application for manage our reminders to use medicine and determin
 |Prism.Unity.Forms|8.1.97|
 |Microsoft.EntityFrameworkCore.Sqlite|5.0.8|
 |MD.PersianDateTime.Standard|2.2.0|
-|.NET Core|2.0+|
-|Tizen|4.0+|
 
 **Platform Support**
 |Platform|Version|

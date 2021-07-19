@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<linker>
+  <!--
+      For more information see the docs on creating custom Linker Settings
+      https://docs.microsoft.com/en-us/xamarin/cross-platform/deploy-test/linker
+  -->
+  <assembly fullname="Essential.Interfaces">
+    <type fullname="Xamarin.Essentials.Implementation.AppInfoImplementation">
+      <method name=".ctor" />
+    </type>
+  </assembly>
+
+  <assembly fullname="DarooYar" />
+  <assembly fullname="Prism" />
+  <assembly fullname="Prism.Forms" />
+  <assembly fullname="Prism.Unity.Forms" />
+  <assembly fullname="Unity.Abstractions" />
+  <assembly fullname="Unity.Container"/>
+
+  <assembly fullname="Microsoft.EntityFrameworkCore.Sqlite" />
+  <assembly fullname="Microsoft.EntityFrameworkCore" />
+  <assembly fullname="Microsoft.EntityFrameworkCore.Abstractions" />
+  <assembly fullname="Microsoft.EntityFrameworkCore.Relational" />
+  <assembly fullname="Sharpnado.MaterialFrame.Android" />
+  <assembly fullname="Sharpnado.MaterialFrame" />
+  <assembly fullname="MD.PersianDateTime.Standard" />
+  <assembly fullname="Rg.Plugins.Popup">
+    <type fullname="*" />
+  </assembly>
+  <assembly fullname="System.Core"/>
+  <assembly fullname="mscorlib">
+    <type fullname="System.DateTime">
+      <method name="AddYears"></method>
+      <method name="AddMonths"></method>
+      <method name="AddDays"></method>
+      <method name="AddHours"></method>
+      <method name="AddMinutes"></method>
+      <method name="AddSeconds"></method>
+    </type>
+  </assembly>
+  <!--<assembly fullname="Xamarin.Android.Support.v7.AppCompat">
+    <type fullname="Android.Support.V7.Widget.*" />
+  </assembly>
+  <assembly fullname="Xamarin.Android.Support.Core.UI">
+    <type fullname="Android.Support.V4.Widget.Space" />
+  </assembly>-->
+
+</linker>

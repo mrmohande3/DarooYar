@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="DarooYar.Views.ItemTemplate.DayItemTemplate"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Margin="20,5">
+    <ContentView.Content>
+        <StackLayout Margin="8,0">
+            <Frame
+                x:Name="dateFrame"
+                Padding="0,4"
+                Background="#eee"
+                CornerRadius="10"
+                HasShadow="False">
+                <Label
+                    x:Name="dateLable"
+                    FontSize="Caption"
+                    HorizontalOptions="Center"
+                    Text="{Binding MonthDate}" />
+            </Frame>
+            <Label
+                x:Name="dayLable"
+                Margin="0,-5,0,0"
+                FontFamily="{StaticResource ShabnameBold}"
+                HorizontalOptions="Center"
+                Text="{Binding DayName}" />
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

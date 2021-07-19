@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DarooYar.Views.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:itemTemplate="clr-namespace:DarooYar.Views.ItemTemplate;assembly=DarooYar"
+    xmlns:models="clr-namespace:DarooYar.Models;assembly=DarooYar"
+    xmlns:views="http://xamarin.com/schemas/2020/toolkit"
+    BackgroundColor="White"
+    NavigationPage.HasNavigationBar="False">
+
+
+    <Grid RowDefinitions="Auto,*">
+        <Grid
+            Grid.Row="0"
+            Margin="15,12,25,-3"
+            Grid.ColumnDefinitions="Auto,*">
+            <Button
+                Grid.Column="0"
+                BackgroundColor="{StaticResource PrimaryColor}"
+                Command="{Binding ProfilePageCommand}"
+                CornerRadius="25"
+                FontFamily="{StaticResource MaterialFontFamily}"
+                FontSize="20"
+                HeightRequest="45"
+                Text="{x:Static models:MaterialIconFont.AccountOutline}"
+                TextColor="White"
+                VerticalOptions="Center"
+                WidthRequest="45" />
+            <StackLayout Grid.Column="1" VerticalOptions="Center">
+                <Label
+                    FontFamily="{StaticResource ShabnameBold}"
+                    FontSize="Large"
+                    Text="دارو یـــار"
+                    TextColor="{StaticResource PrimaryColor}"
+                    VerticalOptions="Center" />
+                <Label
+                    Margin="0,-5,0,0"
+                    FontFamily="{StaticResource Shabname}"
+                    FontSize="Caption"
+                    Text="همراه شما در بهبودی از بیماری های مختلف"
+                    TextColor="{StaticResource PrimaryColor}"
+                    VerticalOptions="Center" />
+            </StackLayout>
+        </Grid>
+        <Frame
+            Grid.Row="1"
+            Margin="0,0,0,-20"
+            Padding="0,0,0,20"
+            BackgroundColor="{StaticResource PrimaryColor}"
+            CornerRadius="15"
+            HeightRequest="60"
+            VerticalOptions="End" />
+        <Grid Grid.Row="1">
+            <views:TabView
+                IsSwipeEnabled="False"
+                TabIndicatorColor="{StaticResource PrimaryDarkColor}"
+                TabStripBackgroundColor="Transparent"
+                TabStripHeight="60"
+                TabStripPlacement="Bottom">
+                <views:TabViewItem
+                    FontFamily="{StaticResource ShabnameBold}"
+                    Text="جعبه دارو"
+                    TextColor="#FFB8D3"
+                    TextColorSelected="White">
+                    <Frame
+                        Margin="10"
+                        Padding="8"
+                        Background="#F3F3F3"
+                        CornerRadius="12"
+                        HasShadow="False">
+                        <Grid Margin="0,0,0,0" RowDefinitions="60,*">
+                            <CollectionView x:Name="reminderDayCollection" HeightRequest="60">
+                                <CollectionView.ItemsLayout>
+                                    <LinearItemsLayout Orientation="Horizontal" />
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <itemTemplate:DayItemTemplate>
+                                            <itemTemplate:DayItemTemplate.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="ReminderItemModel_Tppaed" />
+                                            </itemTemplate:DayItemTemplate.GestureRecognizers>
+                                        </itemTemplate:DayItemTemplate>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                            <FlexLayout
+                                Grid.Row="1"
+                                Margin="0,10,0,0"
+                                AlignContent="Start"
+                                BindableLayout.ItemsSource="{Binding Reminders}"
+                                JustifyContent="Center"
+                                Wrap="Wrap">
+
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <itemTemplate:ReminderItemTemplate />
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </FlexLayout>
+                            <Button
+                                Grid.Row="1"
+                                Padding="0,-2,0,0"
+                                BackgroundColor="#3BB6F6"
+                                Command="{Binding AddReminderCommand}"
+                                CornerRadius="30"
+                                FontFamily="{StaticResource ShabnameBold}"
+                                FontSize="25"
+                                HeightRequest="40"
+                                HorizontalOptions="End"
+                                Text="+"
+                                TextColor="White"
+                                VerticalOptions="End"
+                                WidthRequest="40" />
+                        </Grid>
+                    </Frame>
+                </views:TabViewItem>
+                <views:TabViewItem
+                    FontFamily="{StaticResource ShabnameBold}"
+                    Text="اطلاعاتـ سلامت"
+                    TextColor="#FFB8D3"
+                    TextColorSelected="White">
+                    <Frame
+                        Margin="10"
+                        Padding="8"
+                        Background="#F3F3F3"
+                        CornerRadius="12"
+                        FlowDirection="RightToLeft"
+                        HasShadow="False">
+                        <Grid Margin="0,0,0,0" RowDefinitions="60,*">
+                            <CollectionView x:Name="testDayCollection" HeightRequest="60">
+                                <CollectionView.ItemsLayout>
+                                    <LinearItemsLayout Orientation="Horizontal" />
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <itemTemplate:DayItemTemplate>
+                                            <itemTemplate:DayItemTemplate.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="TestItemModel_Tppaed" />
+                                            </itemTemplate:DayItemTemplate.GestureRecognizers>
+                                        </itemTemplate:DayItemTemplate>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                            <FlexLayout
+                                Grid.Row="1"
+                                Margin="0,10,0,0"
+                                AlignContent="Start"
+                                BindableLayout.ItemsSource="{Binding BloodTests}"
+                                JustifyContent="Center"
+                                Wrap="Wrap">
+
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <itemTemplate:TestItemTemplate />
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </FlexLayout>
+                            <Button
+                                Grid.Row="1"
+                                Padding="0,-2,0,0"
+                                BackgroundColor="#3BB6F6"
+                                Command="{Binding AddTestCommand}"
+                                CornerRadius="30"
+                                FontFamily="{StaticResource ShabnameBold}"
+                                FontSize="25"
+                                HeightRequest="40"
+                                HorizontalOptions="Start"
+                                Text="+"
+                                TextColor="White"
+                                VerticalOptions="End"
+                                WidthRequest="40" />
+                        </Grid>
+                    </Frame>
+                </views:TabViewItem>
+            </views:TabView>
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

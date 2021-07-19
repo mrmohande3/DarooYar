@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="DarooYar.Views.ItemTemplate.TestItemTemplate"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    HeightRequest="100"
+    WidthRequest="115">
+    <ContentView.Content>
+        <Grid Margin="5,10,5,10">
+            <Frame Padding="8,28,8,8" CornerRadius="12">
+                <StackLayout>
+                    <Grid ColumnDefinitions="Auto,*,Auto">
+                        <Label
+                            Grid.Column="0"
+                            FontFamily="{StaticResource ShabnameBold}"
+                            HorizontalOptions="Center"
+                            Text="فشار خون" />
+
+                        <Label
+                            Grid.Column="2"
+                            FontFamily="{StaticResource ShabnameBold}"
+                            HorizontalOptions="Center"
+                            Text="2 عدد" />
+                    </Grid>
+                    <Grid ColumnDefinitions="Auto,*,Auto">
+                        <Label
+                            Grid.Column="0"
+                            FontFamily="{StaticResource ShabnameBold}"
+                            HorizontalOptions="Center"
+                            Text="قند خون" />
+
+                        <Label
+                            Grid.Column="2"
+                            FontFamily="{StaticResource ShabnameBold}"
+                            HorizontalOptions="Center"
+                            Text="2 عدد" />
+                    </Grid>
+                </StackLayout>
+
+            </Frame>
+            <Frame
+                Margin="0,-10,0,0"
+                Padding="18,3"
+                BackgroundColor="{StaticResource PrimaryColor}"
+                CornerRadius="25"
+                HorizontalOptions="Center"
+                VerticalOptions="Start">
+                <Label Text="19:45" TextColor="White" />
+            </Frame>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

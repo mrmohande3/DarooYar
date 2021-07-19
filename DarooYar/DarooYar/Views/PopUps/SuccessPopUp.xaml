@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="DarooYar.Views.PopUps.SuccessPopUp"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:DarooYar.Models;assembly=DarooYar"
+    Margin="25,0"
+    FlowDirection="RightToLeft"
+    HorizontalOptions="Center"
+    VerticalOptions="Center">
+    <ContentView.Content>
+        <Frame BackgroundColor="#444" CornerRadius="10">
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    x:Name="messageLabel"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="عملیات با موفقیت انجام شد"
+                    TextColor="White"
+                    VerticalOptions="Center" />
+                <Label
+                    FontFamily="{StaticResource MaterialFontFamily}"
+                    FontSize="28"
+                    HorizontalOptions="Center"
+                    Text="{x:Static models:MaterialIconFont.CheckCircle}"
+                    TextColor="ForestGreen"
+                    VerticalOptions="Center" />
+            </StackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

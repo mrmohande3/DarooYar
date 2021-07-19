@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="DarooYar.Views.PopUps.AddReminderPopUp"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Margin="0,0"
+    FlowDirection="RightToLeft"
+    VerticalOptions="Center">
+    <ContentView.Content>
+        <Grid Padding="50" VerticalOptions="Center">
+
+            <Frame Padding="15,25,15,15" CornerRadius="10">
+                <StackLayout>
+                    <!--<Entry FontSize="Body" Placeholder="ساعت یاداوری" />-->
+                    <TimePicker
+                        x:Name="timePicker"
+                        FlowDirection="LeftToRight"
+                        TextTransform="Uppercase" />
+                    <Entry
+                        x:Name="nameEntry"
+                        FontSize="Body"
+                        Placeholder="نام دارو" />
+                    <Entry
+                        x:Name="detailEntry"
+                        FontSize="Body"
+                        Placeholder="دلیل استفاده" />
+                    <Grid ColumnDefinitions="*,*">
+                        <Entry
+                            x:Name="typeEntry"
+                            FontSize="Body"
+                            Placeholder="نوع" />
+                        <Entry
+                            x:Name="countEntry"
+                            Grid.Column="1"
+                            FontSize="Body"
+                            Placeholder="تعداد" />
+                    </Grid>
+                    <Grid Margin="0,10,0,0" ColumnDefinitions="4*,2*">
+                        <Button
+                            Padding="0,5"
+                            BackgroundColor="{StaticResource Success}"
+                            Clicked="SubmitButton_OnClicked"
+                            CornerRadius="10"
+                            FontFamily="{StaticResource ShabnameBold}"
+                            FontSize="17"
+                            HeightRequest="45"
+                            Text="ثبتــــ"
+                            TextColor="White" />
+                        <Button
+                            Grid.Column="1"
+                            Padding="0,5"
+                            BackgroundColor="Transparent"
+                            Clicked="CloseButton_OnClicked"
+                            CornerRadius="10"
+                            FontFamily="{StaticResource ShabnameBold}"
+                            FontSize="17"
+                            HeightRequest="45"
+                            Text="لغو"
+                            TextColor="#888" />
+                    </Grid>
+
+                </StackLayout>
+            </Frame>
+            <Frame
+                Margin="15,-15,15,0"
+                Padding="15,10"
+                BackgroundColor="{StaticResource PrimaryColor}"
+                CornerRadius="25"
+                VerticalOptions="Start">
+                <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                    <Label
+                        FontSize="Small"
+                        Text="تعریف یاداور برای"
+                        TextColor="White" />
+                    <Label x:Name="dateLabel" TextColor="White" />
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

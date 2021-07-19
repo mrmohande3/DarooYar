@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="DarooYar.Views.ProfilePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:DarooYar.Models;assembly=DarooYar"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:rv="clr-namespace:Sharpnado.MaterialFrame;assembly=Sharpnado.MaterialFrame"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    BackgroundColor="{StaticResource PrimaryColor}"
+    FlowDirection="RightToLeft"
+    NavigationPage.HasNavigationBar="False">
+    <Grid RowDefinitions="*,9*">
+        <Frame
+            Grid.Row="1"
+            Margin="0,0,0,-20"
+            Padding="8,45,8,25"
+            BackgroundColor="#EEEEEE"
+            CornerRadius="25">
+            <ScrollView>
+                <StackLayout Margin="25,0">
+                    <Entry
+                        FontSize="Body"
+                        Placeholder="نام بیمار"
+                        Text="{Binding FullName}" />
+                    <Entry
+                        Margin="0,-5"
+                        FontSize="Body"
+                        Placeholder="شماره تماس"
+                        Text="{Binding PhoneNumber}" />
+                    <Entry
+                        FontSize="Body"
+                        Placeholder="سن"
+                        Text="{Binding Age}" />
+                    <Button
+                        BackgroundColor="{StaticResource Info}"
+                        Command="{Binding EditUserCommand}"
+                        CornerRadius="8"
+                        Text="تایید ویرایش"
+                        TextColor="White" />
+                    <Frame
+                        Margin="3,15,3,0"
+                        Padding="25,15"
+                        BackgroundColor="#519DFF"
+                        CornerRadius="10">
+                        <Grid ColumnDefinitions="Auto,Auto,*,Auto">
+                            <Label
+                                FontFamily="{StaticResource FontAwsomeFontFamily}"
+                                FontSize="65"
+                                Text="{x:Static models:FaIconFont.HospitalSymbol}"
+                                TextColor="White" />
+                            <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                <Label
+                                    FontFamily="{StaticResource ShabnameBold}"
+                                    FontSize="18"
+                                    Text="فــــشارخون"
+                                    TextColor="White" />
+                                <Label
+                                    Margin="0,-7,0,0"
+                                    FontFamily="{StaticResource IranSansULight}"
+                                    FontSize="14"
+                                    Text="Blood Pressure"
+                                    TextColor="White" />
+                            </StackLayout>
+                            <Label
+                                Grid.Column="3"
+                                FontFamily="{StaticResource ShabnameBold}"
+                                FontSize="35"
+                                Text="{Binding BloodPressureAvg}"
+                                TextColor="White"
+                                VerticalOptions="Center" />
+                        </Grid>
+                    </Frame>
+
+                    <Frame
+                        Margin="3,15,3,0"
+                        Padding="25,15"
+                        BackgroundColor="#FFBF51"
+                        CornerRadius="10">
+                        <Grid ColumnDefinitions="Auto,Auto,*,Auto">
+                            <Label
+                                FontFamily="{StaticResource FontAwsomeFontFamily}"
+                                FontSize="63"
+                                Text="{x:Static models:FaIconFont.EyeDropper}"
+                                TextColor="White" />
+                            <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                <Label
+                                    FontFamily="{StaticResource ShabnameBold}"
+                                    FontSize="18"
+                                    Text="قنــدخون"
+                                    TextColor="White" />
+                                <Label
+                                    Margin="0,-7,0,0"
+                                    FontFamily="{StaticResource IranSansULight}"
+                                    FontSize="14"
+                                    Text="Blood Sugar"
+                                    TextColor="White" />
+                            </StackLayout>
+                            <Label
+                                Grid.Column="3"
+                                FontFamily="{StaticResource ShabnameBold}"
+                                FontSize="35"
+                                Text="{Binding BloodSugarAvg}"
+                                TextColor="White"
+                                VerticalOptions="Center" />
+                        </Grid>
+                    </Frame>
+
+                    <Frame
+                        Margin="3,15,3,0"
+                        Padding="25,15"
+                        BackgroundColor="#FF5174"
+                        CornerRadius="10">
+                        <Grid ColumnDefinitions="Auto,Auto,*,Auto">
+                            <Label
+                                FontFamily="{StaticResource FontAwsomeFontFamily}"
+                                FontSize="63"
+                                Text="{x:Static models:FaIconFont.AlarmClock}"
+                                TextColor="White" />
+                            <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                <Label
+                                    FontFamily="{StaticResource ShabnameBold}"
+                                    FontSize="18"
+                                    Text="یـاداورها"
+                                    TextColor="White" />
+                                <Label
+                                    Margin="0,-7,0,0"
+                                    FontFamily="{StaticResource IranSansULight}"
+                                    FontSize="14"
+                                    Text="Reminders"
+                                    TextColor="White" />
+                            </StackLayout>
+                            <Label
+                                Grid.Column="3"
+                                FontFamily="{StaticResource ShabnameBold}"
+                                FontSize="35"
+                                Text="{Binding Reminders}"
+                                TextColor="White"
+                                VerticalOptions="Center" />
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+        </Frame>
+        <Grid
+            Grid.Row="0"
+            Margin="0,0,0,-55"
+            ColumnDefinitions="Auto,Auto"
+            HeightRequest="90"
+            HorizontalOptions="Center"
+            RowDefinitions="*,*"
+            VerticalOptions="End">
+            <rv:MaterialFrame
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                Grid.Column="0"
+                Padding="0"
+                BackgroundColor="White"
+                CornerRadius="50"
+                HasShadow="True"
+                HeightRequest="90"
+                WidthRequest="90" />
+            <Label
+                Grid.Row="0"
+                Grid.Column="1"
+                Margin="0,5,0,0"
+                FontFamily="{StaticResource ShabnameBold}"
+                Text="{Binding FullName}"
+                TextColor="White"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalOptions="Start"
+                Text="{Binding PhoneNumber}"
+                TextColor="{StaticResource PrimaryColor}"
+                VerticalOptions="Start" />
+        </Grid>
+        <Button
+            Margin="10,5"
+            BackgroundColor="White"
+            Command="{Binding BackNavigationCommand}"
+            CornerRadius="35"
+            FontFamily="{StaticResource FontAwsomeFontFamily}"
+            FontSize="18"
+            HeightRequest="45"
+            HorizontalOptions="End"
+            Text="{x:Static models:FaIconFont.ChevronLeft}"
+            TextColor="{StaticResource PrimaryColor}"
+            VerticalOptions="Start"
+            WidthRequest="45" />
+    </Grid>
+</ContentPage>

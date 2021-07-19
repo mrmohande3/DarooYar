@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary
+    x:Class="DarooYar.Theme.BaseTheme"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+
+    <Color x:Key="PrimaryColor">#FF3784</Color>
+    <Color x:Key="PrimaryDarkColor">#BB1656</Color>
+    <Color x:Key="PrimaryLight">#FEF9FB</Color>
+
+    <Color x:Key="Gray-100">#f6f7f8</Color>
+    <Color x:Key="Gray-200">#ebecef</Color>
+    <Color x:Key="Gray-300">#ced2d9</Color>
+    <Color x:Key="Gray-400">#b2b8c2</Color>
+    <Color x:Key="Gray-500">#959eac</Color>
+    <Color x:Key="Gray-600">#788396</Color>
+    <Color x:Key="Gray-700">#606a7b</Color>
+    <Color x:Key="Gray-800">#4a515e</Color>
+    <Color x:Key="Gray-900">#333942</Color>
+    <Color x:Key="Gray-Black">#000000</Color>
+    <Color x:Key="Gray-White">#ffffff</Color>
+
+    <Color x:Key="Secondary">#d54381</Color>
+    <Color x:Key="Green">#08B874</Color>
+    <Color x:Key="Red">#ff4a4a</Color>
+    <Color x:Key="Orange">#FA9917</Color>
+    <Color x:Key="Blue">#3179E8</Color>
+    <Color x:Key="HyperLink">#567cd7</Color>
+    <Color x:Key="FacebookBlue">#4267B2</Color>
+    <Color x:Key="Info">#33b5e5</Color>
+    <Color x:Key="Success">#6CBC37</Color>
+    <Color x:Key="Warning">#ffbb33</Color>
+    <Color x:Key="Danger">#ff4444</Color>
+    <Color x:Key="Stylish">#4B515D</Color>
+    <Color x:Key="Elegant">#2E2E2E</Color>
+
+
+    <Color x:Key="SecondaryDark">#d54381</Color>
+    <Color x:Key="GreenDark">#7bed9f</Color>
+    <Color x:Key="RedDark">#ff4a4a</Color>
+    <Color x:Key="OrangeDark">#FA9917</Color>
+    <Color x:Key="InfoDark">#70a1ff</Color>
+    <Color x:Key="SuccessDark">#00C851</Color>
+    <Color x:Key="WarningDark">#ffbb33</Color>
+    <Color x:Key="DangerDark">#ff4444</Color>
+    <Color x:Key="StylishDark">#4B515D</Color>
+    <Color x:Key="ElegantDark">#2E2E2E</Color>
+
+    <OnPlatform x:Key="MaterialFontFamily" x:TypeArguments="x:String">
+        <On Platform="iOS" Value="Material Design Icons" />
+        <On Platform="Android" Value="materialdesignicons-webfont.ttf#Material Design Icons" />
+        <On Platform="UWP" Value="Assets/Fonts/materialdesignicons-webfont.ttf#Material Design Icons" />
+    </OnPlatform>
+    <OnPlatform x:Key="FontAwsomeFontFamily" x:TypeArguments="x:String">
+        <On Platform="iOS" Value="Font Awesome 5 Pro Reqular" />
+        <On Platform="Android" Value="fa-regular-400.ttf#Font Awesome 5 Pro Reqular" />
+        <On Platform="UWP" Value="Assets/Fonts/fa-regular-400.ttf#Font Awesome 5 Pro Reqular" />
+    </OnPlatform>
+    <OnPlatform x:Key="IranSansULight" x:TypeArguments="x:String">
+        <On Platform="Android" Value="IranSansULight.ttf#IranSansULight" />
+    </OnPlatform>
+    <OnPlatform x:Key="IranSansMedium" x:TypeArguments="x:String">
+        <On Platform="Android" Value="IranSansMedium.ttf#IranSansMedium" />
+    </OnPlatform>
+    <OnPlatform x:Key="IranSansBlack" x:TypeArguments="x:String">
+        <On Platform="Android" Value="IranSansBlack.ttf#IranSansBlack" />
+    </OnPlatform>
+    <OnPlatform x:Key="IranSansBold" x:TypeArguments="x:String">
+        <On Platform="Android" Value="IranSansBold.ttf#IranSansBold" />
+    </OnPlatform>
+
+    <OnPlatform x:Key="Shabname" x:TypeArguments="x:String">
+        <On Platform="Android" Value="Shabnam.ttf#Shabnam" />
+    </OnPlatform>
+    <OnPlatform x:Key="ShabnameBold" x:TypeArguments="x:String">
+        <On Platform="Android" Value="Shabnam-Bold.ttf#Shabnam-Bold" />
+    </OnPlatform>
+    <Style TargetType="Entry">
+        <Setter Property="FontFamily" Value="{StaticResource Shabname}" />
+    </Style>
+    <Style TargetType="Label">
+        <Setter Property="FontFamily" Value="{StaticResource Shabname}" />
+    </Style>
+    <Style TargetType="Button">
+        <Setter Property="FontFamily" Value="{StaticResource Shabname}" />
+    </Style>
+    <Style TargetType="ContentPage">
+        <Setter Property="FlowDirection" Value="RightToLeft" />
+    </Style>
+
+</ResourceDictionary>

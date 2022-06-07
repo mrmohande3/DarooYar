@@ -8,6 +8,8 @@ using DarooYar.Models;
 using DarooYar.Utilities;
 using Microsoft.EntityFrameworkCore;
 using Prism.Navigation;
+using Rg.Plugins.Popup.Services;
+using Xamarin.CommunityToolkit.UI.Views;
 using Xamarin.Essentials;
 
 namespace DarooYar.ViewModels
@@ -28,7 +30,7 @@ namespace DarooYar.ViewModels
         {
 
         }
-
+        
         public override async void Initialize(INavigationParameters parameters)
         {
             base.Initialize(parameters);
